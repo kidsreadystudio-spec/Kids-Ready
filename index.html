@@ -15,6 +15,7 @@
 .gm-note{font-size:.78rem;color:#8a6a4a;margin:.8rem 0 0}.gm-foot{padding:.8rem 1.2rem calc(.8rem + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #F0E3D0}
 #gmStart{width:100%;padding:.8rem;font-size:1.05rem;font-weight:700;color:#fff;background:#E07E35;border:none;border-radius:2rem;font-family:inherit}
 
+#games,#sumi-game{scroll-margin-top:76px}
 .gm-section{padding:2.5rem 1.1rem;background:#FDF6EC;text-align:center;font-family:'Noto Sans TC',sans-serif}
 .gm-title{font-size:1.5rem;font-weight:900;color:#5A3A22;margin:0 0 .3rem}.gm-sub{color:#8a6a4a;font-size:.9rem;margin:0 0 1.2rem}
 .gm-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;max-width:420px;margin:0 auto}
@@ -2449,5 +2450,7 @@ if(unlocked())mark();})();</script>
 </script>
 
 <script>if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
+<script id="gm-hash-jump">(function(){function go(){var t=location.hash&&document.getElementById(location.hash.slice(1));if(t&&/^#(games|sumi-game)$/.test(location.hash)){t.scrollIntoView({behavior:"auto",block:"start"})}}
+window.addEventListener("load",function(){go();setTimeout(go,400);setTimeout(go,1200)});window.addEventListener("hashchange",go)})();</script>
 </body>
 </html>
